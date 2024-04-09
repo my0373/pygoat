@@ -37,7 +37,7 @@ jobs:
           jf rt build-publish
           
        - name: Scan Build
-         run: jf bs --fail=false pygoat
+         run: jf bs --fail=false
 
           
        # - name: Scan Build
