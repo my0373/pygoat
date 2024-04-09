@@ -1,4 +1,4 @@
-name: "JFrog Integration Example"
+name: "pygoat"
 on: [workflow_dispatch]
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
           jf rt build-publish
           
        - name: Scan Build
-         run: jf bs 
+         run: jf bs pygoat
 
           
        # - name: Scan Build
