@@ -37,4 +37,8 @@ jobs:
           jf rt build-publish
           
        - name: Scan Build
-         run: jf bs --fail=false --format table --rescan
+         run: jf bs 
+
+          
+       # - name: Scan Build
+       #   run: jf bs --fail=false --format table --rescan
