@@ -16,7 +16,7 @@ jobs:
            JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
            
        - name: Set CLI Config
-         run: jf pip-config --global=true --repo-resolve=patriciar-pypi
+         run: jf pip-config --global=true --repo-resolve=pygoat-pypi
            
        - name: Install Deps
          run: jf pip install .
@@ -25,7 +25,7 @@ jobs:
          run: python setup.py sdist bdist_wheel
          
        - name: Publish
-         run: jf rt upload dist/ patriciar-pypi/
+         run: jf rt upload dist/ pygoat-pypi/
          
        - name: Publish Build info With JFrog CLI
          run: |
@@ -35,3 +35,6 @@ jobs:
           jf rt build-add-git
           # Publish build info
           jf rt build-publish
+          
+        - name: Scan Build
+          run: jf bs --fail=false --format table --rescan
