@@ -36,8 +36,8 @@ jobs:
           # Publish build info
           jf rt build-publish
           
-       - name: Scan Build
-         run: jf bs --fail=false
+       # - name: Scan Build
+       #   run: jf bs --fail=false
 
           
        # - name: Scan Build
