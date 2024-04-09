@@ -37,6 +37,8 @@ jobs:
           jf rt build-publish
           
        - name: Scan Build
+         env:  
+           JFROG_CLI_LOG_LEVEL: debug
          run: jf bs --fail=false --format table --rescan 
 
           
