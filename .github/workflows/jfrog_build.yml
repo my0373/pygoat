@@ -24,8 +24,8 @@ jobs:
        - name: Package the project
          run: python setup.py sdist bdist_wheel
          
-       - name: Publish
-         run: jf rt upload dist/ pygoat-pypi/
+       # - name: Publish
+       #   run: jf rt upload dist/ pygoat-pypi/
          
        - name: Publish Build info With JFrog CLI
          run: |
@@ -36,5 +36,5 @@ jobs:
           # Publish build info
           jf rt build-publish
           
-        - name: Scan Build
-          run: jf bs --fail=false --format table --rescan
+       - name: Scan Build
+         run: jf bs --fail=false --format table --rescan
